@@ -27,14 +27,14 @@ namespace DateTimeConversion
 
                 SqlCommand command = new SqlCommand(query, connection);
 
-                //using (SqlCommand updateCommand = new SqlCommand("UPDATE AssessmentComments SET CreatedOn=@localTime WHERE CreatedOn=@utcTime", connection))
-                //{
-                    
-                //    updateCommand.Parameters.AddWithValue("utcTime", utcTime);
-                //    updateCommand.Parameters.AddWithValue("localTime", localTime);
-                //    updateCommand.ExecuteNonQuery();
-                //    Console.WriteLine("\n" + utcTime.ToString() + "  UTC Time " + "\nLocal Time" + localTime);
-                //}
+                using (SqlCommand updateCommand = new SqlCommand("UPDATE AssessmentComments SET CreatedOn=@localTime WHERE CreatedOn=@utcTime", connection))
+                {
+
+                    updateCommand.Parameters.AddWithValue("utcTime", utcTime);
+                    updateCommand.Parameters.AddWithValue("localTime", localTime);
+                    updateCommand.ExecuteNonQuery();
+                    Console.WriteLine("\n" + utcTime.ToString() + "  UTC Time " + "\nLocal Time" + localTime);
+                }
 
                 connection.Close();
                 Console.WriteLine("Done!");
