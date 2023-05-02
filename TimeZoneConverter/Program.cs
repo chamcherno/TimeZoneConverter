@@ -28,8 +28,3 @@ namespace DateTimeConversion
         }
     }
 }
-
-
-
-
-
